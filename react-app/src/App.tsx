@@ -5,6 +5,9 @@ import { Layout } from './components/Layout';
 import { HomePage } from './pages/HomePage';
 import { AuthPage } from './pages/AuthPage';
 import { ArticlePage } from './pages/ArticlePage';
+import { ProfilePage } from './pages/ProfilePage';
+import { EditorPage } from './pages/EditorPage';
+import { SettingsPage } from './pages/SettingsPage';
 import { ProtectedRoute } from './components/ProtectedRoute';
 
 function App() {
@@ -17,11 +20,11 @@ function App() {
             <Route path="login" element={<AuthPage />} />
             <Route path="register" element={<AuthPage />} />
             <Route path="article/:slug" element={<ArticlePage />} />
-            <Route path="@:username" element={<div>Profile Page - Coming Soon</div>} />
-            <Route path="@:username/favorites" element={<div>Profile Favorites - Coming Soon</div>} />
-            <Route path="editor" element={<ProtectedRoute><div>Editor - Coming Soon</div></ProtectedRoute>} />
-            <Route path="editor/:slug" element={<ProtectedRoute><div>Edit Article - Coming Soon</div></ProtectedRoute>} />
-            <Route path="settings" element={<ProtectedRoute><div>Settings - Coming Soon</div></ProtectedRoute>} />
+            <Route path="@:username" element={<ProfilePage />} />
+            <Route path="@:username/favorites" element={<ProfilePage />} />
+            <Route path="editor" element={<ProtectedRoute><EditorPage /></ProtectedRoute>} />
+            <Route path="editor/:slug" element={<ProtectedRoute><EditorPage /></ProtectedRoute>} />
+            <Route path="settings" element={<ProtectedRoute><SettingsPage /></ProtectedRoute>} />
           </Route>
         </Routes>
       </Router>
