@@ -6,6 +6,7 @@ import { Article } from '../types';
 import { FavoriteButton } from '../components/FavoriteButton';
 import { FollowButton } from '../components/FollowButton';
 import { ShowAuthed } from '../components/ShowAuthed';
+import { CommentSection } from '../components/CommentSection';
 
 export const ArticlePage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -123,6 +124,10 @@ export const ArticlePage: React.FC = () => {
             )}
           </div>
         </div>
+
+        <hr />
+
+        <CommentSection articleSlug={article.slug} />
       </div>
     </div>
   );
